@@ -33,4 +33,5 @@ The simulation reads initial conditions from an input file and renders the syste
 
 ## How to Run
 make
+
 ./NBody 157788000.0 25000.0 < nbody/(text_file_name)
