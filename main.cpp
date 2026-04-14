@@ -49,6 +49,7 @@ int main(int argc, char* argv[]) {
         window.clear();
         universe.draw(window);
         window.display();
+	sf::sleep(sf::milliseconds(16));
     }
 
     // Output the final state of the universe in the same format as input

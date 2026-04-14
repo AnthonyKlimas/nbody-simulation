@@ -11,7 +11,7 @@ namespace NB {
         input >> body.xpos >> body.ypos >> body.xvel >> body.yvel >> body.mass;
         std::string filename;
         input >> filename;
-        body.texture.loadFromFile(filename);
+        body.texture.loadFromFile("nbody/" + filename);
         body.sprite.setTexture(body.texture);
         return input;
     }
