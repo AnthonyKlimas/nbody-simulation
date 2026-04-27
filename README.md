@@ -22,7 +22,7 @@ The simulation reads initial conditions from an input file and renders the syste
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 - C++  
 - SFML 
