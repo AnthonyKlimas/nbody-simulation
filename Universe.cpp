@@ -8,10 +8,6 @@ const double G = 6.67430e-11;
 
 namespace NB {
 
-    Universe::Universe() {}
-
-    Universe::~Universe() {}
-
     std::istream& operator>>(std::istream& input, Universe& universe) {
         int numBodies;
         input >> numBodies >> universe.radius;
