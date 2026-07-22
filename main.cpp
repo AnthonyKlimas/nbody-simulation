@@ -17,7 +17,7 @@ int main() {
     // Create Universe object
     NB::Universe universe;
 
-    // Load textures for celestial bodies
+    // If nbody is not a valid folder path return error
     if (!universe.loadTexturesFromFolder("./nbody/")) {
         cerr << "Error: Failed to load textures." << endl;
         return 1;
@@ -32,25 +32,27 @@ int main() {
     // Simulation loop
     while (window.isOpen()) 
     {
+   
         Event event;
-        while (window.pollEvent(event)) 
+        while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
+	
+	
         // Simulate the universe for time step dt
         universe.step(dt);
 
         // Clear the window, draw celestial bodies, and display
         window.clear();
+        
         universe.draw(window);
+        
         window.display();
+        
 	sf::sleep(sf::milliseconds(16));
     }
-
-    // Output the final state of the universe in the same format as input
-    std::cout << universe;
 
     return 0;
 }

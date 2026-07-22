@@ -19,7 +19,7 @@ class Universe {
 		//Initalize a vector that holds the elements of celestial bodies
     		std::vector<CelestialBody> bodies;
     		
-    		//Initalize a map named textures that holds a filename with a texture
+    		//Initalize a map named textures that holds pairs that have a filename and a texture object from sf namespace
     		std::map<std::string, sf::Texture> textures;
     		
     		//Create a double named radius
@@ -27,28 +27,27 @@ class Universe {
 
 	//Define a public specifier, everything below it can be accessed by other classes and functions
 	public:
-  
   		//Declares an input overload operator, so you can write with >>.
   		//Since its declared as a friend it can access the class's private members
     		friend std::istream& operator>>(std::istream& input, Universe& universe);
     
-    		//Declates an output overload operator, so you can write with <<
-    		//Since its declated as a friend it can access the class's private members
-    		friend std::ostream& operator<<(std::ostream& output, const Universe& universe);
-    
     		//Declares a member function named draw
     		void draw(sf::RenderWindow& window);
-    
+    		
+    		//Functions that returns a vector of the object CelestialBody names getCelestialBodies
     		std::vector<CelestialBody>& getCelestialBodies() 
     		{ 
     		
     		return bodies; 
     		
     		}
-    
+    		
+    		//Create a function that returns a bool that takes a string as parameter (which would be the folder path)
     		bool loadTexturesFromFolder(const std::string& folderPath);
     
-    		void step(double dt); // Method to update positions based on velocities and accelerations
+    		// Function that updates positions based on velocities and accelerations
+    		void step(double dt);
+    		
 		};
 
 	} // namespace NB
